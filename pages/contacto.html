@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Gissi</title>
+    <meta name="description"
+        content="Contactá a Gissi para solicitar presupuestos, consultas o información sobre corte láser, bordado y apliques. ¡Respondemos rápido!">
+    <meta name="keywords" content="Contacto, Consultas, Presupuesto, Corte Láser, Bordado, Apliques, Gissi">
+    <meta name="author" content="Gissi">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Tipografía Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER / MENÚ -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="../index.html" class="header__logo">
+                <img src="../img/logo-gissi.png" alt="Gissi - Corte Láser y Bordado">
+            </a>
+            <nav class="header__nav" role="navigation" aria-label="Menú principal">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="corte-laser.html">Corte láser</a></li>
+                    <li><a href="bordado.html">Bordado</a></li>
+                    <li><a href="apliques.html" class="active">Apliques</a></li>
+                    <li><a href="nuestra-empresa.html">Nuestra empresa</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="header__menu-toggle" aria-label="Abrir menú" id="menuToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO/PORTADA DE SECCIÓN -->
+    <section class="seccion-hero" style="background-image: url('images/contacto-banner.jpg');">
+        <div class="container seccion-hero__content">
+            <h1>Contacto</h1>
+            <p>Estamos para ayudarte. Envianos tu consulta o pedí presupuesto sin compromiso.</p>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="contacto-main">
+        <div class="container contacto-main__flex">
+            <div class="contacto-main__form">
+                <h2>Escribinos</h2>
+                <form id="form-contacto" autocomplete="off" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required
+                            placeholder="¿En qué podemos ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primario">Enviar mensaje</button>
+                    <p class="form-feedback" id="form-feedback"></p>
+                </form>
+            </div>
+            <div class="contacto-main__datos">
+                <h2>Datos de contacto</h2>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:info@gissi.com.ar">info@gissi.com.ar</a></li>
+                    <li><strong>WhatsApp:</strong> <a href="https://wa.me/5491123456789" target="_blank">+54 9 11 2345
+                            6789</a></li>
+                    <li><strong>Dirección:</strong> Calle Ejemplo 1234, Buenos Aires, Argentina</li>
+                </ul>
+                <div class="contacto-main__redes">
+                    <a href="https://instagram.com/gissi.ar" target="_blank" aria-label="Instagram"><img
+                            src="images/instagram.svg" alt="Instagram"></a>
+                    <a href="https://facebook.com/gissi.ar" target="_blank" aria-label="Facebook"><img
+                            src="images/facebook.svg" alt="Facebook"></a>
+                </div>
+                <p>Respondemos rápido, de lunes a viernes de 9 a 18hs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA EMBEBIDO (opcional, editable) -->
+    <section class="contacto-mapa">
+        <div class="container">
+            <h2>¿Dónde estamos?</h2>
+            <div class="contacto-mapa__iframe">
+                <iframe src="https://www.google.com/maps?q=Buenos+Aires,+Argentina&output=embed" width="100%"
+                    height="240" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="banner-cta" style="background-image: url('images/banner-cta.jpg');">
+        <div class="container">
+            <h2>¿Querés potenciar tus proyectos?</h2>
+            <p>¡Estamos listos para asesorarte!</p>
+            <a href="./pages/contacto.html" class="btn-secundario">Hablá con nosotros</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="background-image: url('../img/footer.png');">
+        <div class="container footer__grid">
+            <div class="background"></div>
+            <nav class="footer__nav" role="navigation" aria-label="Menú footer">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="corte-laser.html">Corte láser</a></li>
+                    <li><a href="bordado.html">Bordado</a></li>
+                    <li><a href="apliques.html" class="active">Apliques</a></li>
+                    <li><a href="nuestra-empresa.html">Nuestra empresa</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="footer__logo">
+                <img src="../img/logo-gissi.png" alt="Gissi logo blanco">
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

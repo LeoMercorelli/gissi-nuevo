@@ -1,0 +1,1146 @@
+/* -----------------------------------------------------------------------------
+   GISSI - CSS PRINCIPAL
+   Estructura base para sitio institucional con varias páginas y servicios
+   Incluye reset, variables, estilos globales, layout, header, menú, footer,
+   secciones, formularios, grids, botones, responsive, animaciones simples, etc.
+----------------------------------------------------------------------------- */
+
+/* ============ 1. RESET Y VARIABLES ============ */
+:root {
+    --color-primario: #0666a3;
+    --color-secundario: #d1b679;
+    --color-gris-oscuro: #2e2e2e;
+    --color-gris-claro: #f8f8f8;
+    --color-blanco: #fff;
+    --color-negro: #111;
+    --color-cta: #ffbe3b;
+    --color-error: #dc3545;
+    --color-exito: #24b36b;
+
+    --fuente-titulos: 'Montserrat', Arial, sans-serif;
+    --fuente-texto: 'Lato', Arial, sans-serif;
+
+    --espaciado: 1.5rem;
+    --ancho-max: 1200px;
+    --sombra-card: 0 4px 16px rgba(34, 40, 49, 0.06);
+
+    --radio-borde: 0.7rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background: var(--color-gris-claro);
+}
+
+body {
+    font-family: var(--fuente-texto);
+    color: var(--color-gris-oscuro);
+    line-height: 1.6;
+    min-height: 100vh;
+    background: var(--color-gris-claro);
+}
+
+/* ============ 2. ELEMENTOS GENERALES ============ */
+.container {
+    width: 90%;
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 2.5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.3rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-blanco);
+    font-size: 1.08rem;
+}
+
+ul,
+ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover,
+a:focus {
+    color: var(--color-secundario);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: var(--radio-borde);
+    box-shadow: 0 2px 12px rgba(34, 40, 49, 0.05);
+}
+
+/* ============ 3. BOTONES Y ELEMENTOS DE ACCIÓN ============ */
+.btn-primario,
+.btn-secundario,
+.btn-link {
+    display: inline-block;
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    padding: 0.8em 2.2em;
+    border-radius: 2em;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .18s, color .18s, box-shadow .18s;
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    box-shadow: var(--sombra-card);
+}
+
+.btn-primario {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    border: 2px solid var(--color-primario);
+}
+
+.btn-primario:hover,
+.btn-primario:focus {
+    background: var(--color-secundario);
+    color: var(--color-primario);
+    border-color: var(--color-secundario);
+}
+
+.btn-secundario {
+    background: var(--color-cta);
+    color: var(--color-negro);
+    border: 2px solid var(--color-cta);
+}
+
+.btn-secundario:hover,
+.btn-secundario:focus {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    border-color: var(--color-primario);
+}
+
+.btn-link {
+    background: none;
+    color: var(--color-primario);
+    font-weight: 600;
+    padding: 0;
+    margin: 0.8rem 0 0 0;
+    border: none;
+    box-shadow: none;
+}
+
+.btn-link:hover {
+    color: var(--color-secundario);
+    text-decoration: underline;
+}
+
+/* ============ 4. HEADER & MENÚ DE NAVEGACIÓN ============ */
+.header {
+    background: var(--color-blanco);
+    box-shadow: 0 2px 8px rgba(34, 40, 49, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+}
+
+.header__logo img {
+    height: 54px;
+    width: auto;
+}
+
+.header__nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.6rem;
+}
+
+.header__nav a {
+    font-family: var(--fuente-titulos);
+    font-size: 1.12rem;
+    color: var(--color-gris-oscuro);
+    font-weight: 600;
+    padding: 0.4rem 1.2rem;
+    border-radius: 2em;
+    transition: background 0.17s, color 0.17s;
+}
+
+.header__nav a.active,
+.header__nav a:hover,
+.header__nav a:focus {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+/* ============ 5. MENÚ RESPONSIVE ============ */
+.header__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    position: relative;
+    margin-left: 1.3rem;
+}
+
+.header__menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--color-primario);
+    margin-bottom: 7px;
+    border-radius: 3px;
+    transition: all .18s;
+}
+
+.header__menu-toggle span:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .header__container {
+        flex-direction: row;
+    }
+
+    .header__nav ul {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .header__nav {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        background: var(--color-blanco);
+        width: 100vw;
+        box-shadow: 0 8px 32px rgba(34, 40, 49, 0.07);
+        display: none;
+        flex-direction: column;
+        z-index: 99;
+    }
+
+    .header__nav.open {
+        display: flex;
+    }
+
+    .header__nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.8rem 2rem;
+        gap: 1rem;
+    }
+
+    .header__menu-toggle {
+        display: block;
+    }
+}
+
+/* ============ 6. SECCIONES Y HERO/BANNER PRINCIPAL ============ */
+
+.hero,
+.seccion-hero {
+    background-image: 
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+    url('../img/banner-laser.jpg');
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 var(--radio-borde) var(--radio-borde);
+    overflow: hidden;
+    margin-bottom: 2.8rem;
+}
+
+
+.hero__slide,
+.seccion-hero__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* capa azulina sutil */
+    padding: 4.5rem 3rem 4.5rem 3rem;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero__content {
+    width: 40vw;
+    color: var(--color-blanco);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+}
+
+.hero__content h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-blanco);
+}
+
+.hero__content .resaltado {
+    color: var(--color-cta);
+    padding: 0 0.3em;
+    border-radius: 0.3em;
+}
+
+.intro-services img {
+    width: 500px;
+    height: auto;
+}
+
+.intro-services p {
+    color: white;
+        width: 40vw;
+    margin-bottom: 2rem;
+    font-size: 1.22rem;
+}
+
+.seccion-hero__content {
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--color-blanco);
+}
+
+.seccion-hero__content h1 {
+    text-align: center;
+    color: var(--color-blanco);
+}
+
+
+
+
+/*!!!!!!!!!!!!LASER!!!!!!!!!!!!!!!*/
+
+
+/* ============ 7. SERVICIOS DESTACADOS Y GRIDS ============ */
+
+.servicios {
+    background: var(--color-blanco);
+    padding: 3.3rem 0 2.5rem 0;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-card);
+    margin-bottom: 2.5rem;
+}
+
+.servicios__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+    margin-top: 2.2rem;
+}
+
+.servicio-card {
+    background: var(--color-gris-claro);
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 18px rgba(34, 40, 49, 0.09);
+    text-align: center;
+    padding: 2.1rem 1.1rem 1.3rem 1.1rem;
+    transition: transform .17s, box-shadow .17s, background .17s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio-card img {
+    border-radius: 1.6rem;
+    border: solid black 1px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 12px rgba(34, 40, 49, 0.09);
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+}
+
+.servicio-card h3 {
+    color: var(--color-primario);
+    margin-bottom: 0.6rem;
+}
+
+.servicio-card p {
+    font-size: 1rem;
+    color: var(--color-gris-oscuro);
+}
+
+.servicio-card:hover,
+.servicio-card:focus {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 28px rgba(6, 102, 163, 0.11);
+}
+
+.servicio-card:hover h3,
+.servicio-card:focus h3,
+.servicio-card:hover p,
+.servicio-card:focus p {
+    color: var(--color-blanco);
+}
+
+/* ============ 8. BANNER/CTA ============ */
+
+.banner-cta {
+    width: 100%;
+    height: 70vh;
+    padding: 3.5rem 0;
+    background-size: cover;
+    background-position: center;
+    background: cover;
+background-attachment:fixed ;  
+  border-radius: var(--radio-borde);
+    margin: 2.5rem 0 0 0;
+    text-align: center;
+    color: var(--color-blanco);
+    box-shadow: var(--sombra-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-cta .container {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-cta h2,
+.banner-cta p {
+    color: beige;
+    text-shadow:
+    0 2px 6px rgba(6, 102, 163, 0.11),  /* sombra azul clara */
+    0 5px 16px rgba(0,0,0,0.20);         /* sombra negra profunda */
+}
+
+.banner-cta a.btn-secundario {
+    margin-top: 1.2rem;
+}
+
+/* ============ 9. INFO EMPRESA Y SECCIONES FLEX ============ */
+
+.info-empresa {
+    width: 100vw;
+    height: auto;
+    background: var(--color-gris-claro);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    box-shadow: var(--sombra-card);
+}
+
+.info-empresa__grid{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info-empresa__img {
+    width: 500px;
+    height: 500pX;
+}
+
+.info-empresa__texto{
+    margin-right: 100px;
+}
+.info-empresa__texto ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 60px;
+    margin-bottom: 4rem;
+}
+
+.info-empresa__texto li {
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    color: var(--color-gris-oscuro);
+    position: relative;
+    padding-left: 2em;
+}
+
+.info-empresa__texto li:before {
+    content: '✔️';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.09em;
+    color: var(--color-primario);
+}
+
+/*  ============ 9.2. PRIORIDAD CLIENTES ============ */
+.prioridad-clientes {
+    height: 60vh;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 3.2rem 0 4rem 0;
+    text-align: center;
+}
+
+.prioridad-clientes__contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+        margin-top: 60px;
+
+}
+
+.prioridad-clientes h2 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1.55rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    color: white;
+}
+
+.barra-gradiente {
+    width: 120px;
+    height: 10px;
+    margin: 0.4rem auto 1.1rem auto;
+    border-radius: 6px;
+    background: #ffbe3b;
+}
+
+.prioridad-clientes p {
+    color: white;
+    font-size: 1.13rem;
+    margin: 0 auto 0;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 700px) {
+    .prioridad-clientes h2 {
+        font-size: 1.05rem;
+    }
+
+    .barra-gradiente {
+        height: 7px;
+    }
+
+    .prioridad-clientes {
+        padding: 2rem 0 2.2rem 0;
+    }
+}
+
+/* ============ 9.2. PORQUE ELEGIRNOS? / VENTAJAS ============ */
+
+.ventajas {
+    background: url('/img/textura-cuero.jpg') repeat;
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.ventajas__titulo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    text-shadow: 1px 2px 10px #000c;
+}
+
+.ventajas__contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ventaja {
+    background: transparent;
+    padding: 24px 14px;
+    border-radius: 18px;
+    flex: 1 1 320px;
+    min-width: 290px;
+    max-width: 370px;
+    box-sizing: border-box;
+    transition: box-shadow .3s;
+}
+
+.ventaja__icono {
+    width: 84px;
+    height: 84px;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 4px 16px #000a);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ventaja__subtitulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.6px;
+}
+
+.ventaja__texto {
+    font-size: 1.04rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #fff;
+    text-shadow: 0 1px 6px #0007;
+    margin: 0;
+}
+
+@media (max-width: 980px) {
+    .ventajas__contenedor {
+        gap: 30px;
+    }
+
+    .ventaja {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .ventajas__contenedor {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .ventaja {
+        min-width: 0;
+        width: 100%;
+        padding: 28px 5px;
+    }
+
+    .ventaja__icono {
+        width: 62px;
+        height: 62px;
+    }
+
+    .ventajas__titulo {
+        font-size: 1.2rem;
+    }
+}
+
+/* 9.3 SECCION MAPA */
+
+.mapa-ubicacion iframe {
+    width: 100%;
+    height: 50vh;
+    border: none;
+    display: block;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+
+/* ============ 10. GALERÍAS Y GRIDS DE EJEMPLOS ============ */
+
+.galeria-servicio {
+    margin: 3.3rem 0;
+}
+
+.galeria-servicio__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.6rem;
+}
+
+.galeria-servicio__grid img {
+    border-radius: 1.1rem;
+    box-shadow: 0 2px 14px rgba(34, 40, 49, 0.09);
+    object-fit: cover;
+    width: 100%;
+    height: 160px;
+    transition: transform .13s;
+}
+
+.galeria-servicio__grid img:hover,
+.galeria-servicio__grid img:focus {
+    transform: scale(1.055);
+    box-shadow: 0 8px 30px rgba(6, 102, 163, 0.10);
+}
+
+/* ============ 11. SECCIONES "DETALLE DE SERVICIO" ============ */
+
+.servicio-detalle {
+    background: var(--color-blanco);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-card);
+    margin: 2.8rem 0 3rem 0;
+    padding: 2.6rem 0;
+}
+
+.servicio-detalle__flex {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.servicio-detalle__texto {
+    flex: 1.7;
+}
+
+.servicio-detalle__img {
+    flex: 1.2;
+}
+
+.servicio-detalle__img img {
+    border-radius: 1.1rem;
+}
+
+
+/* ============ 12. EMPRESA: HISTORIA, VALORES, TARJETAS ============ */
+
+.empresa-historia {
+    background: var(--color-gris-claro);
+    border-radius: var(--radio-borde);
+    margin: 2.8rem 0;
+    padding: 2.8rem 0;
+    box-shadow: var(--sombra-card);
+}
+
+.empresa-historia__flex {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.empresa-historia__img {
+    flex: 1.1;
+}
+
+.empresa-historia__texto {
+    flex: 1.6;
+}
+
+.empresa-valores {
+    background: var(--color-blanco);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-card);
+    margin-bottom: 2.8rem;
+    padding: 2.8rem 0;
+}
+
+.empresa-valores__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.3rem;
+    text-align: center;
+}
+
+.valor-card {
+    background: var(--color-gris-claro);
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 18px rgba(34, 40, 49, 0.09);
+    padding: 1.8rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.valor-card img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+/* ============ 13. CONTACTO: FORMULARIO Y DATOS ============ */
+
+.contacto-main {
+    background: var(--color-blanco);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-card);
+    margin: 2.7rem 0;
+    padding: 2.6rem 0;
+}
+
+.contacto-main__flex {
+    display: flex;
+    gap: 2.7rem;
+}
+
+.contacto-main__form,
+.contacto-main__datos {
+    flex: 1;
+    min-width: 250px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75em 1em;
+    font-size: 1.1rem;
+    border-radius: 0.7em;
+    border: 1.6px solid var(--color-primario);
+    background: var(--color-gris-claro);
+    color: var(--color-gris-oscuro);
+    font-family: var(--fuente-texto);
+    outline: none;
+    transition: border-color .15s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-secundario);
+    background: #fffef6;
+}
+
+.form-feedback {
+    margin-top: 0.6rem;
+    font-size: 1.05rem;
+    color: var(--color-error);
+    min-height: 24px;
+}
+
+input:valid,
+textarea:valid {
+    border-color: var(--color-exito);
+}
+
+/* Datos de contacto */
+.contacto-main__datos ul {
+    list-style: none;
+    margin-bottom: 1.3rem;
+    padding: 0;
+}
+
+.contacto-main__datos li {
+    margin-bottom: 0.7rem;
+    font-size: 1.08rem;
+}
+
+.contacto-main__redes a {
+    margin-right: 1.1rem;
+    display: inline-block;
+}
+
+.contacto-main__redes img {
+    width: 29px;
+    height: 29px;
+    object-fit: contain;
+    filter: grayscale(0.5);
+    transition: filter .18s;
+}
+
+.contacto-main__redes img:hover {
+    filter: none;
+}
+
+.contacto-main__redes {
+    margin-bottom: 1rem;
+}
+
+/* Mapa */
+.contacto-mapa {
+    margin: 3.2rem 0 2.2rem 0;
+    background: var(--color-gris-claro);
+    border-radius: var(--radio-borde);
+    padding: 1.8rem 0;
+    box-shadow: var(--sombra-card);
+}
+
+.contacto-mapa__iframe iframe {
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 16px rgba(34, 40, 49, 0.09);
+}
+
+/* ============ 14. FOOTER ============ */
+.footer {
+    height: 50vh;
+    background-position: bottom;
+    background-size: cover;
+    padding: 2.7rem 0 2rem 0;
+}
+
+.footer__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.3rem;
+}
+
+.background {
+    width: 150px;
+}
+
+.footer__logo img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 1.4rem;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.11));
+}
+
+.footer__nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer__nav a {
+    color: var(--color-blanco);
+    font-family: var(--fuente-titulos);
+    font-size: 1.09rem;
+    transition: color .16s;
+}
+
+.footer__nav a:hover,
+.footer__nav a:focus {
+    color: var(--color-cta);
+}
+
+
+/* ============ 15. RESPONSIVE DESIGN ============ */
+
+/* Tablets */
+@media (max-width: 1100px) {
+
+    .servicios__grid,
+    .galeria-servicio__grid,
+    .empresa-valores__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem;
+    }
+
+    .empresa-valores__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .empresa-historia__flex,
+    .servicio-detalle__flex,
+    .contacto-main__flex,
+    .footer__grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .info-empresa__texto,
+    .empresa-historia__img,
+    .empresa-historia__texto,
+    .servicio-detalle__img,
+    .servicio-detalle__texto,
+    .contacto-main__form,
+    .contacto-main__datos {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .container {
+        padding: 1.5rem 0;
+    }
+}
+
+/* Móviles */
+@media (max-width: 700px) {
+
+    .hero,
+    .seccion-hero {
+        min-height: 220px;
+        padding: 0;
+    }
+
+    .hero__slide,
+    .seccion-hero__content {
+        padding: 2.5rem 1.2rem;
+        min-height: 220px;
+    }
+
+    .hero__content h1,
+    .seccion-hero__content h1 {
+        font-size: 1.35rem;
+    }
+
+    .hero__content p,
+    .seccion-hero__content p {
+        font-size: 1rem;
+        color: white;
+    }
+
+    .servicios__grid,
+    .galeria-servicio__grid,
+    .empresa-valores__grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+    }
+
+    .footer__grid {
+        gap: 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .banner-cta {
+        padding: 2rem 0;
+    }
+
+    .empresa-valores__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Micro dispositivos */
+@media (max-width: 480px) {
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 98%;
+    }
+
+    .hero__slide,
+    .seccion-hero__content {
+        padding: 1rem 0.3rem;
+    }
+
+    .footer {
+        padding: 1.2rem 0 1rem 0;
+    }
+}
+
+/* ============ 16. ANIMACIONES Y DETALLES PRO ============ */
+
+@media (hover: hover) {
+
+    .servicio-card,
+    .galeria-servicio__grid img {
+        transition: transform .14s, box-shadow .15s, background .18s, color .16s;
+    }
+}
+
+a,
+button {
+    transition: color .15s, background .17s, box-shadow .15s;
+}
+
+/* ============ 17. UTILIDADES Y CLASES EXTRAS ============ */
+
+.resaltado {
+    color: var(--color-cta);
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 0.3em;
+    padding: 0 0.22em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.mt-1 {
+    margin-top: 1rem !important;
+}
+
+.mt-2 {
+    margin-top: 2rem !important;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #e9e9e9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-secundario);
+    border-radius: 4px;
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: var(--color-error);
+}
+
+input:focus:invalid,
+textarea:focus:invalid {
+    background: #fff0f2;
+}
+
+/* ============ 18. ACCESIBILIDAD Y SELECCIÓN ============ */
+
+::selection {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+/* ============ 19. DEBUG (borrar en producción si querés) ============ */
+/*
+.container { outline: 1px dashed #0666a333; }
+*/
