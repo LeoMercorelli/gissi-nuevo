@@ -83,12 +83,13 @@ h3 {
     margin-bottom: 1rem;
 }
 
+/*
 p {
-    margin-bottom: 1rem;
     color: var(--color-blanco);
+    margin-bottom: 1rem;
     font-size: 1.08rem;
 }
-
+*/
 ul,
 ol {
     margin-left: 2rem;
@@ -287,9 +288,9 @@ img {
 
 .hero,
 .seccion-hero {
-    background-image: 
-    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-    url('../img/banner-laser.jpg');
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../img/laser/banner-laser.jpg');
     position: relative;
     height: 90vh;
     display: flex;
@@ -301,6 +302,56 @@ img {
     overflow: hidden;
     margin-bottom: 2.8rem;
 }
+
+
+.seccion-hero-laser {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../img/laser/banner-laser.jpg');
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 var(--radio-borde) var(--radio-borde);
+    overflow: hidden;
+    margin-bottom: 2.8rem;
+}
+
+.seccion-hero-apliques {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../img/apliques/banner-apliques.png');
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 var(--radio-borde) var(--radio-borde);
+    overflow: hidden;
+    margin-bottom: 2.8rem;
+}
+
+.seccion-hero-bordado {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../img/bordado/bordado.jpg');
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 var(--radio-borde) var(--radio-borde);
+    overflow: hidden;
+    margin-bottom: 2.8rem;
+}
+
 
 /* ============ HERO SECTIONS ============ */
 .hero__slide,
@@ -341,21 +392,35 @@ img {
     border-radius: 0.3em;
 }
 
+.index-hero__content p {
+    margin-bottom: 1rem;
+    font-size: 1.08rem;
+}
+
+.intro-services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .intro-services img {
     width: 500px;
+    margin-right: 100px;
     height: auto;
 }
 
 .intro-services p {
     color: white;
-        width: 40vw;
+    width: 32vw;
+    margin-left: 100px;
     margin-bottom: 2rem;
     font-size: 1.22rem;
+    line-height: 2;
 }
 
 /* ----- Apliques page ----- */
 .apliques-hero__content {
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -369,7 +434,7 @@ img {
 
 /* ----- Bordado page ----- */
 .bordado-hero__content {
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -383,10 +448,10 @@ img {
 
 /* ----- Corte láser page ----- */
 .corte-laser-hero__content {
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     color: var(--color-blanco);
 }
 
@@ -397,7 +462,7 @@ img {
 
 /* ----- Nuestra empresa page ----- */
 .nuestra-empresa-hero__content {
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -411,7 +476,7 @@ img {
 
 /* ----- Contacto page ----- */
 .contacto-hero__content {
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -426,7 +491,6 @@ img {
 
 
 
-/*!!!!!!!!!!!!LASER!!!!!!!!!!!!!!!*/
 
 
 /* ============ 7. SERVICIOS DESTACADOS Y GRIDS ============ */
@@ -502,8 +566,8 @@ img {
     background-size: cover;
     background-position: center;
     background: cover;
-background-attachment:fixed ;  
-  border-radius: var(--radio-borde);
+    background-attachment: fixed;
+    border-radius: var(--radio-borde);
     margin: 2.5rem 0 0 0;
     text-align: center;
     color: var(--color-blanco);
@@ -521,13 +585,112 @@ background-attachment:fixed ;
 .banner-cta p {
     color: beige;
     text-shadow:
-    0 2px 6px rgba(6, 102, 163, 0.11),  /* sombra azul clara */
-    0 5px 16px rgba(0,0,0,0.20);         /* sombra negra profunda */
+        0 2px 6px rgba(6, 102, 163, 0.11),
+        /* sombra azul clara */
+        0 5px 16px rgba(0, 0, 0, 0.20);
+    /* sombra negra profunda */
 }
 
 .banner-cta a.btn-secundario {
     margin-top: 1.2rem;
 }
+
+
+.banner-cta-laser {
+    width: 100%;
+    height: 50vh;
+    padding: 3.5rem 0;
+    background-size: cover;
+    background-position: center;
+    background: cover;
+    background-attachment: fixed;
+    border-radius: var(--radio-borde);
+    margin: 2.5rem 0 0 0;
+    text-align: center;
+    color: var(--color-blanco);
+    box-shadow: var(--sombra-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.container-laser h2 {
+    color: beige;
+}
+
+.container-laser a {
+    margin-top: 50px;
+}
+
+
+/* ============ FAQS  ============ */
+.faq {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    font-family: 'Lato', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2e2e2e;
+}
+
+.acordeon-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.acordeon-titulo {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0666a3;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.acordeon-titulo::after {
+    content: '+';
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.acordeon-titulo.activo::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.acordeon-titulo:hover {
+    background-color: #e9f5ff;
+}
+
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.2rem;
+    color: #444;
+    background-color: #fff;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.acordeon-contenido.abierto {
+    padding: 1rem 1.2rem;
+    max-height: 500px;
+    /* suficiente para mostrar el contenido */
+}
+
+
 
 /* ============ 9. INFO EMPRESA Y SECCIONES FLEX ============ */
 
@@ -542,7 +705,7 @@ background-attachment:fixed ;
     box-shadow: var(--sombra-card);
 }
 
-.info-empresa__grid{
+.info-empresa__grid {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -553,9 +716,10 @@ background-attachment:fixed ;
     height: 500pX;
 }
 
-.info-empresa__texto{
+.info-empresa__texto {
     margin-right: 100px;
 }
+
 .info-empresa__texto ul {
     list-style: none;
     padding: 0;
@@ -596,7 +760,7 @@ background-attachment:fixed ;
     z-index: 2;
     max-width: 900px;
     margin: 0 auto;
-        margin-top: 60px;
+    margin-top: 60px;
 
 }
 
@@ -647,7 +811,7 @@ background-attachment:fixed ;
     background: url('/img/textura-cuero.jpg') repeat;
     padding: 60px 20px 40px 20px;
     text-align: center;
-    color: #fff;
+    color: var(--color-cta);
 }
 
 .ventajas__titulo {
@@ -700,7 +864,8 @@ background-attachment:fixed ;
     font-size: 1.04rem;
     font-weight: 400;
     line-height: 1.35;
-    color: #fff;
+    color: var(--color-cta);
+    ;
     text-shadow: 0 1px 6px #0007;
     margin: 0;
 }
@@ -749,6 +914,100 @@ background-attachment:fixed ;
     -webkit-filter: grayscale(100%);
 }
 
+/*++++++++++++++9.2. BENEFICIOS LASER++++++++++++++++++++++*/
+.beneficios-laser {
+    padding: 4rem 2rem;
+    background-image: url('../img/index/banner-cta.png');
+    /* Reemplazá con tu fondo */
+    background-size: cover;
+    background-position: top;
+    text-align: center;
+    color: white;
+}
+
+.beneficios-laser__titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.beneficios-laser__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: start;
+    justify-items: center;
+}
+
+.beneficio {
+    max-width: 500px;
+}
+
+.icono-svg {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+}
+
+.icono-svg svg,
+.icono-svg img {
+    width: 100%;
+    height: 100%;
+    stroke: white;
+    fill: none;
+    stroke-width: 2px;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: trazo-svg 2.5s ease forwards infinite alternate;
+}
+
+/* Ajuste opcional para que no parpadeen todos al mismo tiempo */
+.icono-svg:nth-child(1) svg,
+.icono-svg:nth-child(1) img {
+    animation-delay: 0s;
+}
+
+.icono-svg:nth-child(2) svg,
+.icono-svg:nth-child(2) img {
+    animation-delay: 0.5s;
+}
+
+.icono-svg:nth-child(3) svg,
+.icono-svg:nth-child(3) img {
+    animation-delay: 1s;
+}
+
+@keyframes trazo-svg {
+    0% {
+        stroke-dashoffset: 400;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+.beneficio__titulo {
+    color: var(--color-cta);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.beneficio__texto {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+
 
 /* ============ 10. GALERÍAS Y GRIDS DE EJEMPLOS ============ */
 
@@ -758,24 +1017,64 @@ background-attachment:fixed ;
 
 .galeria-servicio__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 2fr);
     gap: 1.6rem;
+    perspective: 1px;
+    /* Esto ayuda a que el escalado se vea más fluido */
 }
 
-.galeria-servicio__grid img {
+.card-galeria {
+    position: relative;
+    overflow: visible;
+    /* ✅ CAMBIO CLAVE */
+    border-radius: 8px;
+    transition: transform 0.8s ease, box-shadow 0.8s ease;
+    will-change: transform;
+    /* Mejora el rendimiento del hover */
+}
+
+.card-galeria:hover {
+    transform: scale(1.055);
+    box-shadow: 0 8px 30px rgba(6, 102, 163, 0.3);
+}
+
+.card-galeria img {
     border-radius: 1.1rem;
     box-shadow: 0 2px 14px rgba(34, 40, 49, 0.09);
-    object-fit: cover;
+    display: block;
     width: 100%;
-    height: 160px;
-    transition: transform .13s;
+    height: auto;
+    transition: inherit;
 }
 
-.galeria-servicio__grid img:hover,
-.galeria-servicio__grid img:focus {
-    transform: scale(1.055);
-    box-shadow: 0 8px 30px rgba(6, 102, 163, 0.10);
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    /* Para que el hover no se rompa */
+    border-radius: 1.1rem;
 }
+
+.card-galeria:hover .overlay {
+    opacity: 1;
+}
+
+.texto-overlay {
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
 
 /* ============ 11. SECCIONES "DETALLE DE SERVICIO" ============ */
 
@@ -785,20 +1084,25 @@ background-attachment:fixed ;
     box-shadow: var(--sombra-card);
     margin: 2.8rem 0 3rem 0;
     padding: 2.6rem 0;
+    line-height: 2;
+
 }
 
 .servicio-detalle__flex {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 2.5rem;
 }
 
 .servicio-detalle__texto {
-    flex: 1.7;
+    width: 40vw;
+    margin-bottom: 2rem;
+    font-size: 1.22rem;
 }
 
 .servicio-detalle__img {
-    flex: 1.2;
+    width: 500px;
+    height: auto;
 }
 
 .servicio-detalle__img img {
@@ -879,6 +1183,7 @@ background-attachment:fixed ;
 
 .contacto-main__form,
 .contacto-main__datos {
+    margin-left: 100px;
     flex: 1;
     min-width: 250px;
 }
@@ -930,6 +1235,14 @@ textarea:valid {
 /* Datos de contacto */
 .contacto-main__datos ul {
     list-style: none;
+    margin-top: 5rem;
+    margin-bottom: 1.3rem;
+    padding: 0;
+}
+
+.contacto-main__datos p {
+    font-size: x-large;
+    margin-top: 3rem;
     margin-bottom: 1.3rem;
     padding: 0;
 }
@@ -982,12 +1295,68 @@ textarea:valid {
     padding: 2.7rem 0 2rem 0;
 }
 
+.f-ra {
+    height: 20vh;
+    color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-ra h2 {
+    color: beige;
+}
+
+.footer-contacto {
+    background-position: bottom;
+    background-size: cover;
+    padding: 2.7rem 0 2rem 0;
+}
+
+
+.costura-decorativa {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.costura-decorativa svg {
+    width: 90%;
+    overflow: visible;
+}
+
+.trazo-animado {
+    stroke-dasharray: 8;
+    /* Aproximado, puede ajustarse */
+    stroke-dashoffset: 10;
+    animation: trazarCostura 5s ease-in-out infinite alternate;
+}
+
+@keyframes trazarCostura {
+    from {
+        stroke-dashoffset: 200;
+        opacity: 1;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+.footer__grid-contacto {
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+
 .footer__grid {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 2.3rem;
+    align-items: end;
 }
 
 .background {
@@ -1053,8 +1422,7 @@ textarea:valid {
     .empresa-historia__texto,
     .servicio-detalle__img,
     .servicio-detalle__texto,
-    .contacto-main__form,
-    .contacto-main__datos {
+    .contacto-main__form {
         flex: 1 1 100%;
         width: 100%;
     }

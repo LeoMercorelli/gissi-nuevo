@@ -22,49 +22,67 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-});
 
-// ===========================
-// FORMULARIO DE CONTACTO (Frontend Only)
-// ===========================
-
-document.addEventListener('DOMContentLoaded', function () {
+    // ===========================
+    // FORMULARIO DE CONTACTO (Frontend Only)
+    // ===========================
     const form = document.getElementById('form-contacto');
     const feedback = document.getElementById('form-feedback');
-    if (!form) return;
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Limpio feedback previo
-        feedback.textContent = '';
-        feedback.style.color = 'var(--color-error)';
-
-        // Obtengo valores
-        const nombre = form.nombre.value.trim();
-        const email = form.email.value.trim();
-        const mensaje = form.mensaje.value.trim();
-
-        // Validación básica
-        if (!nombre || !email || !mensaje) {
-            feedback.textContent = 'Por favor completá todos los campos obligatorios.';
-            return;
-        }
-        // Validación email (regex simple)
-        if (!/^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/.test(email)) {
-            feedback.textContent = 'Ingresá un email válido.';
-            form.email.focus();
-            return;
-        }
-
-        // Simulo envío OK
-        feedback.textContent = '¡Mensaje enviado! Te responderemos pronto 😊';
-        feedback.style.color = 'var(--color-exito)';
-        form.reset();
-
-        // Borro el mensaje a los 4 segundos
-        setTimeout(() => {
+            // Limpio feedback previo
             feedback.textContent = '';
-        }, 4000);
+            feedback.style.color = 'var(--color-error)';
+
+            // Obtengo valores
+            const nombre = form.nombre.value.trim();
+            const email = form.email.value.trim();
+            const mensaje = form.mensaje.value.trim();
+
+            // Validación básica
+            if (!nombre || !email || !mensaje) {
+                feedback.textContent = 'Por favor completá todos los campos obligatorios.';
+                return;
+            }
+            // Validación email (regex simple)
+            if (!/^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/.test(email)) {
+                feedback.textContent = 'Ingresá un email válido.';
+                form.email.focus();
+                return;
+            }
+
+            // Simulo envío OK
+            feedback.textContent = '¡Mensaje enviado! Te responderemos pronto 😊';
+            feedback.style.color = 'var(--color-exito)';
+            form.reset();
+
+            // Borro el mensaje a los 4 segundos
+            setTimeout(() => {
+                feedback.textContent = '';
+            }, 4000);
+        });
+    }
+
+    // ===========================
+    // ACORDEÓN DE PREGUNTAS FRECUENTES
+    // ===========================
+    const titulos = document.querySelectorAll('.acordeon-titulo');
+
+    titulos.forEach(titulo => {
+        titulo.addEventListener('click', () => {
+            const estaActivo = titulo.classList.contains('activo');
+
+            // Cierro todos
+            document.querySelectorAll('.acordeon-titulo').forEach(t => t.classList.remove('activo'));
+            document.querySelectorAll('.acordeon-contenido').forEach(c => c.classList.remove('abierto'));
+
+            // Si no estaba activo, lo abro
+            if (!estaActivo) {
+                titulo.classList.add('activo');
+                titulo.nextElementSibling.classList.add('abierto');
+            }
+        });
     });
 });
